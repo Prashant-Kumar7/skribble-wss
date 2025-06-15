@@ -31,7 +31,9 @@ export const options = {
 
 client.on('error', err => console.log('Redis Client Error', err));
 
-
+app.get("/", (_, res)=>{
+  res.json("Hello from skribble websocket server")
+})
 const httpServer = app.listen(8080)
 
 const wss = new WebSocketServer({ server: httpServer });
