@@ -10,12 +10,7 @@ const app = express()
 dotenv.config()
 
 export const client = createClient({
-    username: 'default',
-    password: process.env.REDIS_PASSWORD,
-    socket: {
-        host: 'redis-14424.c83.us-east-1-2.ec2.redns.redis-cloud.com',
-        port: 14424
-    }
+  url: process.env.REDIS_URL as string
 });
 
 export const options = {
